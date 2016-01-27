@@ -14,5 +14,4 @@ class Solution(object):
             length += 1
         return strs[0][0: length] if len(strs) != 0 else ''
 
-s = ["aca","cba"]
-print Solution().longestCommonPrefix(s)
+
