@@ -14,6 +14,8 @@ class Solution(object):
                 result.append(str(path[0: -1]))
             return
         for i in range(idx + 1, len(s) + 1):
+            if i - idx > 3:
+                break
             if self.__is_valide(s[idx: i]):
                 self.__dfs(s, i, count + 1, path + s[idx: i] + ".", result)
 
