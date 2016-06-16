@@ -33,8 +33,3 @@ class Solution(object):
         self.ans = root.val
         max_tree_sum(root)
         return self.ans
-
-root = TreeNode(1)
-root.left = TreeNode(2)
-root.right = TreeNode(3)
-print Solution().maxPathSum(root)
