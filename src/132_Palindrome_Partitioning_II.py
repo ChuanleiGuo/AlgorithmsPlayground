@@ -15,5 +15,3 @@ class Solution(object):
                     m = 0 if j == 0 else min(m, cut[j - 1] + 1)
             cut[i] = m
         return cut[n - 1]
-
-print Solution().minCut("aab")
