@@ -5,6 +5,18 @@ class Solution(object):
         :type str: str
         :rtype: bool
         """
-        s = pattern
-        t = str.split()
-        return map(s.find, s) == map(t.index, t)
+        hash_map = {}
+        arr = str.split()
+        if len(pattern) != len(arr):
+            return False
+
+        for i in range(len(arr)):
+            c = pattern[i]
+            if c in hash_map:
+                if hash_map[c] != arr[i]:
+                    return False
+            else:
+                if arr[i] in hash_map.values():
+                    return False
+                hash_map[c] = arr[i]
+        return True
