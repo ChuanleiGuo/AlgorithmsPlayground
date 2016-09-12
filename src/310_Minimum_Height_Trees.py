@@ -24,5 +24,3 @@ class Solution(object):
                 vertices.remove(x)
 
         return list(vertices) if n != 1 else [0]
-
-print Solution().findMinHeightTrees(4, [[1, 0], [1, 2], [1, 3]])
