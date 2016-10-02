@@ -44,5 +44,3 @@ class Solution(object):
                         l = [i, words_to_pos[str1_rvs]]
                         res.append(l)
         return res
-print Solution().palindromePairs(["bat", "tab", "cat"])
-print Solution().palindromePairs(["abcd", "dcba", "lls", "s", "sssll"])
