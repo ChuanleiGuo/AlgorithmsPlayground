@@ -21,5 +21,3 @@ class Solution(object):
             elif guess(mid) == -1:
                 end = mid - 1
         return start
-
-print Solution().guessNumber(10)
