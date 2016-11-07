@@ -4,9 +4,16 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        if n == 1 or n == 0:
-            return 0
-        elif n % 2 == 0:
-            return 1 + self.integerReplacement(n / 2)
-        else:
-            return 1 + min(self.integerReplacement(n + 1), self.integerReplacement(n - 1))
+
+        def helper(n, d):
+            if n in d:
+                return d[n]
+
+            if n % 2 == 0:
+                d[n] = helper(n / 2, d) + 1
+            else:
+                d[n] = 1 + min(helper(n + 1, d), helper(n - 1, d))
+            return d[n]
+
+        d = {1: 0}
+        return helper(n, d)
