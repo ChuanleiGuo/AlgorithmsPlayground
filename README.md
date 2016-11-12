@@ -1,4 +1,4 @@
 # LeetCodeSolutions
 LeetCode Problems' Solutions
 
-Completed: 306/440
+Completed: 307/440
