@@ -7,16 +7,16 @@ class Solution(object):
         if not nums or len(nums) == 0:
             return True
 
-        volumn = sum(nums)
-        if volumn % 2 != 0:
+        volume = sum(nums)
+        if volume % 2 != 0:
             return False
 
-        volumn /= 2
-        dp = [False] * (volumn + 1)
+        volume /= 2
+        dp = [False] * (volume + 1)
         dp[0] = True
 
         for i in range(1, len(nums) + 1):
-            for j in range(volumn, nums[i - 1] - 1, -1):
+            for j in range(volume, nums[i - 1] - 1, -1):
                 dp[j] = dp[j] or dp[j - nums[i - 1]]
 
-        return dp[volumn]
+        return dp[volume]
