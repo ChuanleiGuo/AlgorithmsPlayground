@@ -6,7 +6,7 @@
 
 using namespace std;
 
-const int maxn = 1000 + 10;
+const int maxn = 10000 + 10;
 int in_order[maxn], post_order[maxn], lch[maxn], rch[maxn];
 int n;
 int best, best_sum;
