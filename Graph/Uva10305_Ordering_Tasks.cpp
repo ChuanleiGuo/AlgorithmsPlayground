@@ -10,7 +10,7 @@ int g[maxn + 10][maxn + 10], vis[maxn + 1], stack[maxn + 1];
 int pos = 0;
 int u, v, m, n;
 
-int push(int x) {
+void push(int x) {
     stack[pos ++] = x;
 }
 
@@ -18,15 +18,15 @@ int pop() {
     return stack[-- pos];
 }
 
-int dfs(int u) {
+void dfs(int u) {
     vis[u] = -1;
     for (int i = 1; i <= n; i ++) {
         if (g[u][i] && !vis[i]) {
             dfs(i);
         }
     }
-    vis[u] = 1;
     push(u);
+    vis[u] = 1;
 }
 
 int main() {
@@ -41,7 +41,7 @@ int main() {
         }
         while (pos) {
             printf("%d", pop());
-            printf("%c", pop > 0 ? ' ' : '\n');
+            printf("%c", pos > 0 ? ' ' : '\n');
         }
     }
     return 0;
