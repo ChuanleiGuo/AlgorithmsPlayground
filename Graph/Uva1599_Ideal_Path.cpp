@@ -11,7 +11,7 @@ const int maxn = 100000;
 struct node {
     int v, c;
     node *next;
-} edges[maxn * 2 + 10];
+} edges[maxn * 4 + 10];
 
 node *adj[maxn + 10];
 node *end_edge = edges;
@@ -73,7 +73,7 @@ void shortest_path(int s) {
     d[1] -= 1;
     int i;
     printf("%d\n", d[1]);
-    for (int i = 1; i <= d[i]; i ++) {
+    for (int i = 1; i <= d[1]; i ++) {
         printf("%d%c", path[i], i == d[1] ? '\n' : ' ');
     }
 }
