@@ -36,3 +36,8 @@ main.cpp
 # freopen files
 input.txt
 output.txt
+
+# java
+*.class
+tests/
+*.zip
