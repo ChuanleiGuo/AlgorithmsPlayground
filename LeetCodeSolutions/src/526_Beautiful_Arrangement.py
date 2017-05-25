@@ -11,7 +11,7 @@ class Solution(object):
                 return
             
             for i in range(1, N + 1):
-                if used[i] == 0 and (i % idx == 0 or idx % i == 0):
+                if used[i] == False and (i % idx == 0 or idx % i == 0):
                     used[i] = True
                     helper(idx + 1, used)
                     used[i] = False
