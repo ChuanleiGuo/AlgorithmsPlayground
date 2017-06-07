@@ -24,7 +24,7 @@ class Solution(object):
                 r = cell[0] + d[0]
                 c = cell[1] + d[1]
                 if r < 0 or r >= m or c < 0 or c >= n \
-                        or matrix[r][c] <= matrix[cell[0]][cell[1]]:
+                        or matrix[r][c] <= matrix[cell[0]][cell[1]] + 1:
                     continue
                 queue.append((r, c))
                 matrix[r][c] = matrix[cell[0]][cell[1]] + 1
