@@ -13,5 +13,3 @@ class Solution:
                     return word[:i]
             return word
         return ' '.join([replace(word) for word in sentence.split(' ')])
-
-print(Solution().replaceWords(["cat", "bat", "rat"], "the cattle was rattled by the battery"))
