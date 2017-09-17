@@ -26,17 +26,17 @@ int main() {
         int n, m;
         scanf("%d%d", &n, &m);
         if (n == 0 && m == 0) { break; }
-        for (int i = 0; i < m; i++) {
+        for (int i = 1; i <= m; i++) {
             scanf("%d%d%d", &nodes[i].x, &nodes[i].y, &nodes[i].w);
         }
-        sort(nodes, nodes + m, cmp);
+        sort(nodes + 1, nodes + 1 + m, cmp);
         int cnt = 0, ans = INF;
-        for (int i = 0; i < m; i++) {
+        for (int i = 1; i <= m; i++) {
             cnt = 0;
-            for (int j = 0; j < n; j++) {
+            for (int j = 1; j <= n; j++) {
                 p[j] = j;
             }
-            for (int j = i; j < m; j++) {
+            for (int j = i; j <= m; j++) {
                 int px = find(nodes[j].x), py = find(nodes[j].y);
                 if (px != py) {
                     p[px] = py;
