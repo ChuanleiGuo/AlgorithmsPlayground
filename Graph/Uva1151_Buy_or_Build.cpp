@@ -1,11 +1,12 @@
 #include <cstdio>
 #include <cassert>
 #include <vector>
+#include <algorithm>
 #include <iostream>
 
 using namespace std;
 
-const int MAXN = 1e3 + 10;
+const int MAXN = 1e3 + 3;
 const int MAXM = MAXN * MAXN / 2;
 const int MAXQ = 8 + 2;
 
@@ -60,10 +61,10 @@ struct Kruskal {
         uf.init(n);
         int cost = 0, picked = 0;
         for (int i = 0; i < q; i++) {
-            if (s && (1 << i)) {
+            if (s & (1 << i)) {
                 cost += subnet_cost[i];
                 for (int j = 0; j < subnet_size[i]; j++) {
-                    for (int k = 0; k < subnet_size[i]; k++) {
+                    for (int k = j + 1; k < subnet_size[i]; k++) {
                         if (uf.unite(subnet[i][j], subnet[i][k])) {
                             picked++;
                         }
@@ -92,8 +93,8 @@ int eu_dist(int a, int b) {
 
 void get_edge_cost() {
     m = 0;
-    for (int i = 0; i < n; i ++) {
-        for (int j = i + 1; j <=n; j ++) {
+    for (int i = 1; i < n; i++) {
+        for (int j = i + 1; j <=n; j++) {
             es[m++] = Edge(i, j, eu_dist(i, j));
         }
     }
