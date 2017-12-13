@@ -15,14 +15,14 @@ public class TestOverlappingList {
         return l1;
     }
 
-    private static ListNode<Integer> advanceByK(int k, ListNode<Integer> l) {
+    public static ListNode<Integer> advanceByK(int k, ListNode<Integer> l) {
         while (k-- > 0) {
             l = l.next;
         }
         return l;
     }
 
-    private static int length(ListNode<Integer> l) {
+    public static int length(ListNode<Integer> l) {
         int len = 0;
         while (l != null) {
             len++;
