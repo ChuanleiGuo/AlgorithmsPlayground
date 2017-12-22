@@ -17,6 +17,8 @@ public class StackWithMaxImproved {
         private Deque<Integer> elements = new LinkedList<>();
         private Deque<MaxWithCount> cachedMaxWithCounts = new LinkedList<>();
 
+        public Stack() {}
+
         public boolean isEmpty() {
             return elements.isEmpty();
         }
