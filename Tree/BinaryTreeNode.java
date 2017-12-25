@@ -14,4 +14,10 @@ public class BinaryTreeNode<T> {
         this.left = null;
         this.right = null;
     }
+
+    public BinaryTreeNode(T data, BinaryTreeNode<T> left, BinaryTreeNode<T> right) {
+        this.data = data;
+        this.left = left;
+        this.right = right;
+    }
 }

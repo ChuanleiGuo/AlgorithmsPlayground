@@ -45,12 +45,12 @@ public class LowestCommonAncestorNoParent {
         // 3
         // 2 5
         // 1 4 6
-        BinaryTreeNode<Integer> tree = new BinaryTreeNode<>(3, null, null);
-        tree.left = new BinaryTreeNode<>(2, null, null);
-        tree.left.left = new BinaryTreeNode<>(1, null, null);
-        tree.right = new BinaryTreeNode<>(5, null, null);
-        tree.right.left = new BinaryTreeNode<>(4, null, null);
-        tree.right.right = new BinaryTreeNode<>(6, null, null);
+        BinaryTreeNode<Integer> tree = new BinaryTreeNode<Integer>(3, null, null);
+        tree.left = new BinaryTreeNode<Integer>(2, null, null);
+        tree.left.left = new BinaryTreeNode<Integer>(1, null, null);
+        tree.right = new BinaryTreeNode<Integer>(5, null, null);
+        tree.right.left = new BinaryTreeNode<Integer>(4, null, null);
+        tree.right.right = new BinaryTreeNode<Integer>(6, null, null);
         // should output 3
         BinaryTreeNode<Integer> x = LCA(tree, tree.left, tree.right);
         assert (x.data.equals(3));

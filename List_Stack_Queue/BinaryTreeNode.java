@@ -3,9 +3,21 @@ public class BinaryTreeNode<T> {
     BinaryTreeNode<T> left;
     BinaryTreeNode<T> right;
 
+    public BinaryTreeNode() {
+        this.data = null;
+        this.left = null;
+        this.right = null;
+    }
+
     public BinaryTreeNode(T data) {
         this.data = data;
         this.left = null;
         this.right = null;
+    }
+
+    public BinaryTreeNode(T data, BinaryTreeNode<T> left, BinaryTreeNode<T> right) {
+        this.data = data;
+        this.left = left;
+        this.right = right;
     }
 }
