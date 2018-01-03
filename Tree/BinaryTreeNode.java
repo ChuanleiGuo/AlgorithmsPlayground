@@ -3,32 +3,29 @@ public class BinaryTreeNode<T> {
     BinaryTreeNode<T> parent;
     BinaryTreeNode<T> left;
     BinaryTreeNode<T> right;
+    BinaryTreeNode<T> next;
 
     public BinaryTreeNode() {
-        this.data = null;
-        this.left = null;
-        this.right = null;
-        this.parent = null;
+        BinaryTreeNode(null, null, null, null, null);
     }
 
     public BinaryTreeNode(T data) {
-        this.data = data;
-        this.left = null;
-        this.right = null;
-        this.parent = null;
+        BinaryTreeNode(data, null, null, null, null);
     }
 
     public BinaryTreeNode(T data, BinaryTreeNode<T> left, BinaryTreeNode<T> right) {
-        this.data = data;
-        this.left = left;
-        this.right = right;
-        this.parent = null;
+        BinaryTreeNode(data, left, right, null, null);
     }
 
     public BinaryTreeNode(T data, BinaryTreeNode<T> left, BinaryTreeNode<T> right, BinaryTreeNode<T> parent) {
+        BinaryTreeNode(data, left, right, parent, null);
+    }
+
+    public BinaryTreeNode(T data, BinaryTreeNode<T> left, BinaryTreeNode<T> right, BinaryTreeNode<T> parent, BinaryTreeNode<T> next) {
         this.data = data;
         this.left = left;
         this.right = right;
         this.parent = parent;
+        this.next = next;
     }
 }
