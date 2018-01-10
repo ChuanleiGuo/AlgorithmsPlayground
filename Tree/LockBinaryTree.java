@@ -1,4 +1,4 @@
-public LockBinaryTree {
+public class LockBinaryTree {
     public static class BinaryTree {
         private BinaryTree left, right, parent;
         private boolean locked = false;
