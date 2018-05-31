@@ -13,12 +13,11 @@ class Solution {
         }
         return nums[start];
     }
-
     private int partition(int[] nums, int start, int end) {
         int pivot = start;
         while (start <= end) {
             while (start <= end && nums[start] <= nums[pivot]) { start++; }
-            while (start <= end && nums[end] >= nums[pivot]) { end--; }
+            while (start <= end && nums[end] > nums[pivot]) { end--; }
             if (start > end) { break; }
             swap(nums, start, end);
         }
