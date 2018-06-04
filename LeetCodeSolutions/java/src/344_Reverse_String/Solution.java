@@ -15,9 +15,4 @@ class Solution {
         chars[left] = chars[right];
         chars[right] = temp;
     }
-
-    public static void main(String[] args) {
-        String s = "hello";
-        System.out.println(new Solution().reverseString(s));
-    }
 }
