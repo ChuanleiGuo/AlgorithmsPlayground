@@ -17,7 +17,7 @@ class Solution {
             return;
         }
 
-        for (int i = start; i <= n; i++) {
+        for (int i = start; i <= n - (k - p.size()) + 1; i++) {
             p.add(i);
             generateCombinations(n, k, i + 1, p, result);
             p.remove(p.size() - 1);
