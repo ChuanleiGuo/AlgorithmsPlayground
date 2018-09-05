@@ -6,8 +6,8 @@ public class Solution {
 
     int[][] memo;
 
-    public int knapsnack01(List<Integer> weights, List<Integer> values, int c) {
-        int n = weights.size()
+    public int knapsnack01(int[] weights, int[] values, int c) {
+        int n = weights.length;
         memo = new int[n][c + 1];
         for (int i = 0; i < n; i++) {
             Arrays.fill(memo[i], -1);
@@ -15,7 +15,7 @@ public class Solution {
         return bestValue(weights, values, n - 1, c);
     }
 
-    private int bestValue(List<Integer> weights, List<Integer> values, int index, int c) {
+    private int bestValue(int[] weights, int[] values, int index, int c) {
         if (index < 0 || c <= 0) {
             return 0;
         }
