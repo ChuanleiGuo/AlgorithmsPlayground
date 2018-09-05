@@ -33,27 +33,48 @@ public class Solution {
     // }
 
     // bottom to top
+    // public int knapsnack01(int[] weights, int[] values, int c) {
+    //     int n = weights.length;
+    //     if (n == 0 || c == 0) {
+    //         return 0;
+    //     }
+    //     int[][] memo = new int[n][c + 1];
+    //     for (int i = 0; i < n; i ++) {
+    //         Arrays.fill(memo[i], -1);
+    //     }
+
+    //     for (int j = 0; j <= c; j++) {
+    //         memo[0][j] = (j >= weights[0] ? v[0] : 0);
+    //     }
+    //     for (int i = 1; i < n; i++) {
+    //         for (int j = 0; j <= c; j++) {
+    //             memo[i][j] = memo[i - 1][j];
+    //             if (j >= w[i]) {
+    //                 memo[i][j] = Math.max(memo[i][j], v[i] + memo[i - 1][j - weights[i]]);
+    //             }
+    //         }
+    //     }
+    //     return memo[n - 1][c];
+    // }
+
+    // bottom to top --- one array
     public int knapsnack01(int[] weights, int[] values, int c) {
         int n = weights.length;
         if (n == 0 || c == 0) {
             return 0;
         }
-        int[][] memo = new int[n][c + 1];
-        for (int i = 0; i < n; i ++) {
-            Arrays.fill(memo[i], -1);
-        }
+        int[] memo = new int[c + 1];
+        Arrays.fill(memo, -1);
 
         for (int j = 0; j <= c; j++) {
-            memo[0][j] = (j >= w[0] ? v[0] : 0);
+            memo[j] = (j >= weights[0] ? v[0] : 0);
         }
+
         for (int i = 1; i < n; i++) {
-            for (int j = 0; j <= c; j++) {
-                memo[i][j] = memo[i - 1][j];
-                if (j >= w[i]) {
-                    memo[i][j] = Math.max(memo[i][j], v[i] + memo[i - 1][j - w[i]]);
-                }
+            for (int j = c; j >= weights[i]; j--) {
+                memo[j] = Math.max(memo[j], v[i] + memo[j - weights[i]]);
             }
         }
-        return memo[n - 1][c];
+        return memo[c];
     }
 }
