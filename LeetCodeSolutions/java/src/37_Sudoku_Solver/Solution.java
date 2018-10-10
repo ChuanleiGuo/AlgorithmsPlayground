@@ -1,4 +1,4 @@
-class Solution {
+public class Solution {
 	public void solveSudoku(char[][] board) {
 		if (board == null || board.length == 0) {
 			return;
@@ -37,5 +37,5 @@ class Solution {
 			} 
         }
         return true;
-    }
+	}
 }		
